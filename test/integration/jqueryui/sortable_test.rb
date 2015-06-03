@@ -9,8 +9,16 @@ class SortableTest < ActionDispatch::IntegrationTest
   test "sort items successfully" do
     visit 'https://jqueryui.com/resources/demos/sortable/default.html'
     assert_selector('#sortable')
-    within('#sortable') { assert page.text.index('Item 1') < page.text.index('Item 7'), 'Each item should have initial order.' }
+    within('#sortable') { assert_positions('Item 1', 'Item 7') }
     drag_top_to_bottom('.ui-sortable-handle')
-    within('#sortable') { assert page.text.index('Item 7') < page.text.index('Item 1'), 'Item 1 should be moved below Item 7.' }
+    within('#sortable') { assert_positions('Item 7', 'Item 1') }
+  end
+
+  test "fail sorting of items without adjustments" do
+    visit 'https://jqueryui.com/resources/demos/sortable/default.html'
+    assert_selector('#sortable')
+    within('#sortable') { assert_positions('Item 1', 'Item 7') }
+    drag_top_to_bottom('.ui-sortable-handle', adjust_x: 0, adjust_y: 0)
+    within('#sortable') { assert_positions('Item 1', 'Item 7') }
   end
 end
