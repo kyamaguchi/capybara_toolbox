@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Sortable' do
-  it "demo page for sortable should exisit" do
+  it "demo page for sortable should exist" do
     visit 'https://jqueryui.com/sortable/'
     within('.entry-title') { expect(page).to have_content('Sortable') }
   end
