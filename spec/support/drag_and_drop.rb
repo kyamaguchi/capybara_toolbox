@@ -27,3 +27,11 @@ end
 def assert_positions(first_text, second_text)
   expect(page.text.index(first_text)).to be < page.text.index(second_text)
 end
+
+def positions_of_resizable_handle(handle)
+  %w(x y).map{|method| first(handle).native.location.send(method) }
+end
+
+def resize_by(handle, offset_x, offset_y)
+  first(handle).drag_by(offset_x, offset_y)
+end
