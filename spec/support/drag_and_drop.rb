@@ -24,10 +24,6 @@ def drag_top_to_bottom(row_css, options = {})
   first(row_css).drag_by(adjust_x, offset_y + height + adjust_y)
 end
 
-def assert_positions(first_text, second_text)
-  expect(page.text.index(first_text)).to be < page.text.index(second_text)
-end
-
 def positions_of_resizable_handle(handle)
   %w(x y).map{|method| first(handle).native.location.send(method) }
 end

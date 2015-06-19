@@ -9,16 +9,16 @@ describe 'Sortable' do
   it "sort items successfully" do
     visit 'https://jqueryui.com/resources/demos/sortable/default.html'
     expect(page).to have_selector('#sortable')
-    within('#sortable') { assert_positions('Item 1', 'Item 7') }
+    within('#sortable') { expect(page).to have_content_in_order('Item 1', 'Item 7') }
     drag_top_to_bottom('.ui-sortable-handle')
-    within('#sortable') { assert_positions('Item 7', 'Item 1') }
+    within('#sortable') { expect(page).to have_content_in_order('Item 7', 'Item 1') }
   end
 
   it "fail sorting of items without adjustments" do
     visit 'https://jqueryui.com/resources/demos/sortable/default.html'
     expect(page).to have_selector('#sortable')
-    within('#sortable') { assert_positions('Item 1', 'Item 7') }
+    within('#sortable') { expect(page).to have_content_in_order('Item 1', 'Item 7') }
     drag_top_to_bottom('.ui-sortable-handle', adjust_x: 0, adjust_y: 0)
-    within('#sortable') { assert_positions('Item 1', 'Item 7') }
+    within('#sortable') { expect(page).to have_content_in_order('Item 1', 'Item 7') }
   end
 end

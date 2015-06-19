@@ -1,4 +1,3 @@
-require 'rspec/expectations'
 # This works with selenium driver.
 # Confirmation is ignored with rack_test.
 RSpec::Matchers.define :have_confirmation do |message|
