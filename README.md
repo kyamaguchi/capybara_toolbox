@@ -25,5 +25,5 @@ guard
 - General
   - Confirmation Dialog
 - jQueryUI
-  - sortable
-  - resizable
+  - Sortable
+  - Resizable
