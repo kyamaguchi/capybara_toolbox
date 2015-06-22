@@ -2,6 +2,8 @@ language: ruby
 rvm:
   - 2.1.6
   - 2.2.2
+addons:
+  sauce_connect: true
 env:
   global:
     - secure: uOCUIvqDK7Gvi4M7g1bdCgrcCY2nR0q82hc8jctAUXOVT1pOdwmTEfq2uowgi59Xm2AmpcOtjNDG/J6HTHpHIMk/Bzgp706vAVjPjJoiYfAckAdy6Q0iTA2Pzs88jPF5Fmi4kZBJTw98W3d9DLiwq1wgzEx8EsWOqahPLtwBnyhBUjCK4vxn/5G+JUH1naHTUUOhM3m0S7SZ6kGrKTnwbGDMJQObvakVwB1xPr8H/RaawIS53xrFk0U6HpUKNLPdpfZ9PRX7GDufXBHhtUeQnm+YTNJC/9c2zwv5IbCeMFyZcXZ3BFjdtO6GOt5uc1U4oTqO1Ad3bI618piEzqaRwtwbdhC06/37Cba8Nc94uYrxX6bcoOR+u9ebKqwwzy7Rblc7xVZxYIIsSTwuZJzlditVI1zOyvgyTH3kMQyc3+mA3mPAMmVh3zmGOTUd8YUTp+C/6frVsuSTjwCWXsfigmRwoRierWFWNt2GiyYvQU0UNsY+KcyvSIiYxO+rRFU+NEUERXGk/7+qys/QZyzxtSaQSmzn/7J+HCsoYXpY2Zz1ROaW9y5SpkZCTIgEoKf94j6JcCe87SHm0COH9E0tVX+02ybAgyvMaGniuYniFI8lyz+iQiLADd3cK72dfaQD6ohBUBk0YZqRXqVOF8t/tV1zA7BK9oX7B1WNkicqges=

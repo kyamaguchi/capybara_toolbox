@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kyamaguchi/capybara_toolbox.svg?branch=master)](https://travis-ci.org/kyamaguchi/capybara_toolbox)
+
 ## Capybara Toolbox
 
 Demo app with capybara tips
