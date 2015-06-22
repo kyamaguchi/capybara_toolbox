@@ -1,8 +1,11 @@
 if ENV['CI']
   Capybara.register_driver :selenium do |app|
     caps = Selenium::WebDriver::Remote::Capabilities.firefox({
-      'tunnel-identifier' => ENV['TRAVIS_JOB_NUMBER']
+      'tunnel-identifier' => ENV['TRAVIS_JOB_NUMBER'],
+      'build' => "#{ENV['TRAVIS_JOB_NUMBER']} (#{ENV['TRAVIS_COMMIT']})",
+      'name' => "Travis #{ENV['TRAVIS_JOB_NUMBER']} (#{ENV['TRAVIS_COMMIT']})",
     })
+
     url = "http://#{ENV['SAUCE_USERNAME']}:#{ENV['SAUCE_ACCESS_KEY']}@ondemand.saucelabs.com/wd/hub"
     Capybara::Selenium::Driver.new(app, browser: :remote, url: url, desired_capabilities: caps)
   end
