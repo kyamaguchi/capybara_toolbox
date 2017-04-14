@@ -15,6 +15,7 @@ describe 'Sortable' do
   end
 
   it "fail sorting of items without adjustments" do
+    pending("Now sorting works without adjustment")
     visit 'https://jqueryui.com/resources/demos/sortable/default.html'
     expect(page).to have_selector('#sortable')
     within('#sortable') { expect(page).to have_content_in_order('Item 1', 'Item 7') }
